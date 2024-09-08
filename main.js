@@ -3,7 +3,7 @@ import "./style.css";
 import gsap from 'gsap';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
-const earthTexture = 'naamloze map/1_earth_16k.jpg';
+const earthTexture = 'model/1_earth_16k.jpg';
 
 //scene
 const scene = new THREE.Scene();
@@ -21,7 +21,7 @@ const sizes = {
   height: window.innerHeight,
 }
 
-// Light
+//light
 const light = new THREE.PointLight(0xffffff, 70, 100, 1.7);
 light.position.set(0,10,20);
 scene.add(light);
@@ -39,7 +39,7 @@ renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(3);
 renderer.render(scene, camera);
 
-// conrtols
+//conrtols
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 controls.enablePan = false;
@@ -47,7 +47,7 @@ controls.enableZoom = false;
 controls.autoRotate = true;
 controls.autoRotate = 5;
 
-//Resize
+//resize
 window.addEventListener('resize', () =>{
   //update size
   sizes.width = window.innerWidth
